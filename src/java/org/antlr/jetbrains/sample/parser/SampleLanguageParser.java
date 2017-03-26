@@ -3,6 +3,7 @@
 	//import org.wso2.siddhi.query.compiler.exception.SiddhiParserException;
 package org.antlr.jetbrains.sample.parser;
 
+import org.antlr.jetbrains.sample.structview.SampleLanguageListener;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -177,7 +178,7 @@ public class SampleLanguageParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_parse; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SampleLanguageListener ) ((SampleLanguageListener)listener).enterParse(this);
+			if ( listener instanceof SampleLanguageListener) ((SampleLanguageListener)listener).enterParse(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {

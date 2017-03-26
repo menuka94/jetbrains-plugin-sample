@@ -6,6 +6,7 @@ import com.intellij.psi.PsiElement;
 import org.antlr.jetbrains.adaptor.SymtabUtils;
 import org.antlr.jetbrains.adaptor.lexer.RuleIElementType;
 import org.antlr.jetbrains.adaptor.lexer.TokenIElementType;
+import org.antlr.v4.runtime.tree.Trees;
 import org.jetbrains.annotations.NotNull;
 
 /** This class represents an internal, non-leaf "composite" PSI

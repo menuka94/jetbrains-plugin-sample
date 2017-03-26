@@ -2,6 +2,7 @@ package org.antlr.jetbrains.sample.structview;// Generated from SampleLanguage.g
 
 	//import org.wso2.siddhi.query.compiler.exception.SiddhiParserException;
 
+import org.antlr.jetbrains.sample.parser.SampleLanguageParser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

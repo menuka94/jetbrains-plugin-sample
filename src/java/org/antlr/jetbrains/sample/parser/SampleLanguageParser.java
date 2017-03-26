@@ -167,6 +167,15 @@ public class SampleLanguageParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
+
+	public ParseTree script() {
+		return null;
+	}
+
+	public ParseTree primary() {
+		return null;
+	}
+
 	public static class ParseContext extends ParserRuleContext {
 		public Execution_planContext execution_plan() {
 			return getRuleContext(Execution_planContext.class,0);

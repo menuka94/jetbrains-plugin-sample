@@ -15,7 +15,8 @@ import org.jetbrains.annotations.Nullable;
  */
 public class FunctionSubtree extends IdentifierDefSubtree implements ScopeNode {
 	public FunctionSubtree(@NotNull ASTNode node) {
-		super(node);
+	    // TODO: replace second parameter with a real value
+		super(node, null);
 	}
 
 	@Nullable

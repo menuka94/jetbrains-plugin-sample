@@ -50,13 +50,13 @@ public class SampleParserDefinition implements ParserDefinition {
 	public static final TokenSet COMMENTS =
 		PSIElementTypeFactory.createTokenSet(
 			SampleLanguage.INSTANCE,
-			SampleLanguageLexer.COMMENT,
-			SampleLanguageLexer.LINE_COMMENT);
+			SampleLanguageLexer.MULTILINE_COMMENT,
+			SampleLanguageLexer.SINGLE_LINE_COMMENT);
 
 	public static final TokenSet WHITESPACE =
 		PSIElementTypeFactory.createTokenSet(
 			SampleLanguage.INSTANCE,
-			SampleLanguageLexer.WS);
+			SampleLanguageLexer.SPACES);
 
 	public static final TokenSet STRING =
 		PSIElementTypeFactory.createTokenSet(
@@ -159,18 +159,19 @@ public class SampleParserDefinition implements ParserDefinition {
 		if ( !(elType instanceof RuleIElementType) ) {
 			return new ANTLRPsiNode(node);
 		}
+
 		RuleIElementType ruleElType = (RuleIElementType) elType;
 		switch ( ruleElType.getRuleIndex() ) {
-			case SampleLanguageParser.RULE_function :
+			case SampleLanguageParser.RULE_definition_function :
 				return new FunctionSubtree(node);
-			case SampleLanguageParser.RULE_vardef :
+			case SampleLanguageParser.RULE_attribute :
 				return new VardefSubtree(node);
-			case SampleLanguageParser.RULE_formal_arg :
-				return new ArgdefSubtree(node);
-			case SampleLanguageParser.RULE_block :
-				return new BlockSubtree(node);
-			case SampleLanguageParser.RULE_call_expr :
-				return new CallSubtree(node);
+//			case SampleLanguageParser.RULE_formal_arg :
+//				return new ArgdefSubtree(node);
+//			case SampleLanguageParser.RULE_block :
+//				return new BlockSubtree(node);
+//			case SampleLanguageParser.RULE_function_name :
+//				return new CallSubtree(node);
 			default :
 				return new ANTLRPsiNode(node);
 		}

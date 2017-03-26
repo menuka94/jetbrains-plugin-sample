@@ -11,13 +11,8 @@ import org.antlr.jetbrains.sample.psi.VardefSubtree;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_call_expr;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_expr;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_formal_arg;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_function;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_primary;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_statement;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_vardef;
+import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.*;
+
 
 public class SampleFindUsagesProvider implements FindUsagesProvider {
 	/** Is "find usages" meaningful for a kind of definition subtree? */
@@ -48,6 +43,7 @@ public class SampleFindUsagesProvider implements FindUsagesProvider {
 		// function, vardef, formal_arg, statement, expr, call_expr, primary
 		ANTLRPsiNode parent = (ANTLRPsiNode)element.getParent();
 		RuleIElementType elType = (RuleIElementType)parent.getNode().getElementType();
+		/* // Commenting due to import errors
 		switch ( elType.getRuleIndex() ) {
 			case RULE_function :
 			case RULE_call_expr :
@@ -61,6 +57,7 @@ public class SampleFindUsagesProvider implements FindUsagesProvider {
 			case RULE_primary :
 				return "variable";
 		}
+		*/
 		return "";
 	}
 

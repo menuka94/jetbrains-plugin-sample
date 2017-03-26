@@ -13,10 +13,7 @@ import org.antlr.jetbrains.sample.SampleParserDefinition;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_call_expr;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_expr;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_primary;
-import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.RULE_statement;
+import static org.antlr.jetbrains.sample.parser.SampleLanguageParser.*;
 
 /** From doc: "Every element which can be renamed or referenced
  *             needs to implement com.intellij.psi.PsiNamedElement interface."
@@ -102,11 +99,13 @@ public class IdentifierPSINode extends ANTLRPsiLeafNode implements PsiNamedEleme
 		// do not return a reference for the ID nodes in a definition
 		if ( elType instanceof RuleIElementType ) {
 			switch ( ((RuleIElementType) elType).getRuleIndex() ) {
-				case RULE_statement :
-				case RULE_expr :
-				case RULE_primary :
+//				case RULE_statement :
+				case RULE_expression :
+					// TODO: replacing RULE_primary with RULE_attribute_reference
+				case RULE_attribute_reference :
 					return new VariableRef(this);
-				case RULE_call_expr :
+					// TODO: replacing RULE_call_expr with RULE_definition_function
+				case RULE_definition_function :
 					return new FunctionRef(this);
 			}
 		}

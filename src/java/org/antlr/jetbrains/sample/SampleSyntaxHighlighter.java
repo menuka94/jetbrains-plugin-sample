@@ -70,17 +70,106 @@ public class SampleSyntaxHighlighter extends SyntaxHighlighterBase {
 			case SampleLanguageLexer.ID :
 				attrKey = ID;
 				break;
-			case SampleLanguageLexer.VAR :
-			case SampleLanguageLexer.WHILE :
-			case SampleLanguageLexer.IF :
-			case SampleLanguageLexer.ELSE :
-			case SampleLanguageLexer.RETURN :
-			case SampleLanguageLexer.PRINT :
-			case SampleLanguageLexer.FUNC :
-			case SampleLanguageLexer.TYPEINT :
-			case SampleLanguageLexer.TYPEFLOAT :
-			case SampleLanguageLexer.TYPESTRING :
-			case SampleLanguageLexer.TYPEBOOLEAN :
+			case SampleLanguageLexer.INT_LITERAL :
+			case SampleLanguageLexer.LONG_LITERAL :
+			case SampleLanguageLexer.FLOAT_LITERAL :
+			case SampleLanguageLexer.DOUBLE_LITERAL:
+			case SampleLanguageLexer.COL:
+			
+			case SampleLanguageLexer.SCOL: 
+			case SampleLanguageLexer.DOT:
+			case SampleLanguageLexer.OPEN_PAR:
+			case SampleLanguageLexer.CLOSE_PAR:
+			case SampleLanguageLexer.OPEN_SQARE_BRACKETS:
+			case SampleLanguageLexer.CLOASE_SQARE_BRACKETS:
+			case SampleLanguageLexer.COMMA:
+			case SampleLanguageLexer.ASSIGN:
+			case SampleLanguageLexer.STAR:
+			case SampleLanguageLexer.PLUS:
+			case SampleLanguageLexer.QUESTION:
+			case SampleLanguageLexer.MINUS:
+			case SampleLanguageLexer.DIV:
+			case SampleLanguageLexer.MOD:
+			case SampleLanguageLexer.LT:
+			case SampleLanguageLexer.LT_EQ:
+			case SampleLanguageLexer.GT:
+			case SampleLanguageLexer.GT_EQ:
+			case SampleLanguageLexer.EQ:
+			case SampleLanguageLexer.NOT_EQ:
+			case SampleLanguageLexer.AT_SYMBOL:
+			case SampleLanguageLexer.FOLLOWED_BY:
+			case SampleLanguageLexer.HASH:
+			case SampleLanguageLexer.STREAM:
+			case SampleLanguageLexer.DEFINE:
+			case SampleLanguageLexer.FUNCTION:
+			case SampleLanguageLexer.TRIGGER:
+			case SampleLanguageLexer.TABLE:
+			case SampleLanguageLexer.PLAN:
+			case SampleLanguageLexer.FROM:
+			case SampleLanguageLexer.PARTITION:
+			case SampleLanguageLexer.WINDOW:
+			case SampleLanguageLexer.SELECT:
+			case SampleLanguageLexer.GROUP:
+			case SampleLanguageLexer.BY:
+			case SampleLanguageLexer.HAVING:
+			case SampleLanguageLexer.INSERT:
+			case SampleLanguageLexer.DELETE:
+			case SampleLanguageLexer.UPDATE:
+			case SampleLanguageLexer.RETURN:
+			case SampleLanguageLexer.EVENTS:
+			case SampleLanguageLexer.INTO:
+			case SampleLanguageLexer.OUTPUT:
+			case SampleLanguageLexer.EXPIRED:
+			case SampleLanguageLexer.CURRENT:
+			case SampleLanguageLexer.SNAPSHOT:
+			case SampleLanguageLexer.FOR:
+			case SampleLanguageLexer.RAW:
+			case SampleLanguageLexer.OF:
+			case SampleLanguageLexer.AS:
+			case SampleLanguageLexer.AT:
+			case SampleLanguageLexer.OR:
+			case SampleLanguageLexer.AND:
+			case SampleLanguageLexer.IN:
+			case SampleLanguageLexer.ON:
+			case SampleLanguageLexer.IS:
+			case SampleLanguageLexer.NOT:
+			case SampleLanguageLexer.WITHIN: 
+			case SampleLanguageLexer.WITH:
+			case SampleLanguageLexer.BEGIN:
+			case SampleLanguageLexer.END:
+			case SampleLanguageLexer.NULL:
+			case SampleLanguageLexer.EVERY:
+			case SampleLanguageLexer.LAST:
+			case SampleLanguageLexer.ALL:
+			case SampleLanguageLexer.FIRST:
+			case SampleLanguageLexer.JOIN:
+			case SampleLanguageLexer.INNER:
+			case SampleLanguageLexer.OUTER:
+			case SampleLanguageLexer.RIGHT:
+			case SampleLanguageLexer.LEFT:
+			case SampleLanguageLexer.FULL:
+			case SampleLanguageLexer.UNIDIRECTIONAL: 
+			case SampleLanguageLexer.YEARS:
+			case SampleLanguageLexer.MONTHS:
+			case SampleLanguageLexer.WEEKS:
+			case SampleLanguageLexer.DAYS:
+			case SampleLanguageLexer.HOURS:
+			case SampleLanguageLexer.MINUTES:
+			case SampleLanguageLexer.SECONDS:
+			case SampleLanguageLexer.MILLISECONDS:
+			case SampleLanguageLexer.INT:
+			case SampleLanguageLexer.LONG:
+			case SampleLanguageLexer.FLOAT:
+			case SampleLanguageLexer.DOUBLE:
+			case SampleLanguageLexer.BOOL:
+			case SampleLanguageLexer.OBJECT:
+			case SampleLanguageLexer.ID_QUOTES:
+			case SampleLanguageLexer.STRING_LITERAL:
+			case SampleLanguageLexer.SPACES:
+			case SampleLanguageLexer.UNEXPECTED_CHAR:
+			case SampleLanguageLexer.SCRIPT:
+
+			
 			case SampleLanguageLexer.TRUE :
 			case SampleLanguageLexer.FALSE :
 				attrKey = KEYWORD;
@@ -88,10 +177,10 @@ public class SampleSyntaxHighlighter extends SyntaxHighlighterBase {
 			case SampleLanguageLexer.STRING :
 				attrKey = STRING;
 				break;
-			case SampleLanguageLexer.COMMENT :
+			case SampleLanguageLexer.SINGLE_LINE_COMMENT :
 				attrKey = LINE_COMMENT;
 				break;
-			case SampleLanguageLexer.LINE_COMMENT :
+			case SampleLanguageLexer.MULTILINE_COMMENT :
 				attrKey = BLOCK_COMMENT;
 				break;
 			default :

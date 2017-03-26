@@ -38,9 +38,14 @@ public class ANTLRPsiNode extends ASTWrapperPsiElement {
 	 *  (composite nodes in jetbrains speak) but we want ALL children.
 	 *  Well, we don't want hidden channel stuff.
 	 */
+
+	/* TODO: uncomment the method
 	@Override
 	@NotNull
-	public PsiElement[] getChildren() { return Trees.getChildren(this); }
+	public PsiElement[] getChildren() {
+		return Trees.getChildren(this);
+	}
+	*/
 
 	/** For this internal PSI node, look upward for our enclosing scope.
 	 *  Start looking for a scope at our parent node so getContext()
